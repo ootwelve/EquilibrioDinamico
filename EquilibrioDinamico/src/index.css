@@ -37,6 +37,7 @@ h1 {
 button {
   border-radius: 8px;
   border: 1px solid;
+  color: #213547;
   border-color: rgb(225, 225, 225);
   padding: 0.6em 1.2em;
   margin: 5px;

@@ -20,3 +20,7 @@
   height: auto;
   transition: .5s;
 }
+
+.infoCard h3 {
+  font-size: 1vw;
+}
