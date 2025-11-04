@@ -1,0 +1,58 @@
+/* Container para garantir que os cards não empurrem o layout durante a troca */
+.transicao-wrapper {
+  position: relative; 
+  height: 150px; /* Altura fixa para evitar pulo no layout */
+  width: 100%;
+  margin-top: 20px;
+}
+
+/* Garante que os cards se sobreponham no momento da transição */
+.card-conteudo {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background-color: #ffffff;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+
+/* --- Transição de ENTRADA (O novo card chegando) --- */
+
+/* 1. Estado Inicial de Entrada */
+.card-anim-enter {
+  opacity: 0;
+  transform: translateX(100%); /* Vem da direita, fora da tela */
+}
+
+/* 2. Estado Ativo de Entrada (A animação de fato) */
+.card-anim-enter-active {
+  opacity: 1;
+  transform: translateX(0); /* Move para a posição final */
+  transition: opacity 1000ms ease-out, transform 1000ms ease-out;
+}
+
+/* 3. Estado Final de Entrada (Após a animação) */
+.card-anim-enter-done {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+
+/* --- Transição de SAÍDA (O card antigo saindo) --- */
+
+/* 1. Estado Inicial de Saída */
+.card-anim-exit {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* 2. Estado Ativo de Saída (A animação de fato) */
+.card-anim-exit-active {
+  opacity: 0;
+  transform: translateX(-100%); /* Sai para a esquerda */
+  transition: opacity 1000ms ease-in, transform 1000ms ease-in;
+}
